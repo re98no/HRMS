@@ -1,0 +1,24 @@
+طريقتين لاضافة بيانات للداتا بيس
+-----------------------1---------------------------
+        $admin['name'] = "admin";
+        $admin['email'] = "test@gmail.com";
+        $admin['username'] = "admin";
+        $admin['password'] =bcrypt("admin");
+        $admin['added_by'] =1;
+        $admin['updated_by'] = 1;
+        $admin['active'] = 1;
+        $admin['date'] = date('y-m-d');
+        $admin['com_code'] = 1;
+
+        Admin::create($admin);
+-----------------------------2--------------
+        $admin2 = Admin::create( [
+        'name'=>'admin2',
+        'email'=>'test2@gmail.com',
+        'username'=>'admin2',
+        'password'=>bcrypt("admin"),
+        'added_by'=>1,
+        'updated_by'=>1,
+        'active'=>1,
+        'date'=>date("y-m-d"),
+        'com_code'=>1  ] );

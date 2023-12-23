@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\LoginController;
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/admin/', function () {
-    return view('layouts.admin');
-});
+// For Guest
+Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>'guest'],function(){
+    Route::get('login', [LoginController::class ,'show_login_view'])->name('admin.showlogin');
+    Route::post('login',  [LoginController::class ,'login'])->name('admin.login');
 
-Route::get('admin/test', function () {
-    return view('admin.test');
 });
