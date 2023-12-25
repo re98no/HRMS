@@ -25,4 +25,8 @@
 
         ------------------
         عشان تدير  عمليات الدخول الى صفحة تسجيل الدخول لو ما كان مسجل روح على صفحة المدل وير و عدل على ملف الاوثنتيكيت 
+        -------------------
+        امر عمل controller and model Togather 
         
+         php artisan make:controller Admin\admin_panel_settingController --model=admin_panel_setting --resource
+         ------------------------------------------
